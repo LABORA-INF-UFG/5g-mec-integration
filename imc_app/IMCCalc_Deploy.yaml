@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imc-app
+  namespace: mec-apps
+  labels:
+    app.kubernetes.io/name: imc-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imc-app
+  template:
+    metadata:
+      labels:
+        app: imc-app
+    spec:
+      containers:
+        - name: imc-app
+          imagePullPolicy: Never
+          image: imc-app:1.0
+          ports:
+          - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: imc-app-svc
+  namespace: mec-apps
+spec:
+  ports:
+    - port: 5000      
+  selector:
+    app: imc-app
+  type: ClusterIP

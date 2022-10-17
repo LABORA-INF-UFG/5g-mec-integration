@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  imc-calc:
+    image: imc-calc
+    container_name: imc-calc
+    build: .
+    entrypoint: python3 app.py
+    ports:
+      - 5000:5000
+    restart: on-failure
+    networks:
+      mec-apps:
+        aliases:
+          - imc-calc
+  mts-api:
+    image: mts-api:1.0
+    container_name: MTS-Api
+    build: ../apiMestrado_Ruben/
+    entrypoint: python3 app.py
+    ports:
+      - 6000:6000
+    networks:
+      mec-apps:
+        aliases:
+          - mts-api
+
+networks:
+  mec-apps:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.100.0/24
