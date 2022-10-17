@@ -1,0 +1,10 @@
+connexion
+Flask
+Flask-Cors
+PyJWT
+Werkzeug
+python-dotenv
+requests
+Flask-JWT-Extended
+pika
+waitress
