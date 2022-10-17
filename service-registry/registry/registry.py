@@ -36,8 +36,8 @@ def handle_specific_data(data_type, service_name):
     data = obj_type.objects(service_name=service_name).first()
     if not data: return jsonify({'error': 'data not found'})
     if request.method == 'GET': return handle_get(data)
-    # elif request.method == 'PUT': return handle_put(data)
-    # elif request.method == 'DELETE': return handle_delete(data)    
+    elif request.method == 'PUT': return handle_put(data)
+    elif request.method == 'DELETE': return handle_delete(data)    
 
 
 def handle_get(data):
@@ -50,11 +50,11 @@ def handle_post(obj_type):
     new_data.save()
     return {"message": f"data has been created successfully.", "result": pretty_json(new_data)}
 
-# def handle_put(data):
-#     from_json(request.get_json(), created=True)
-#     data.save()
-#     return {"message": f"data successfully updated", "result": pretty_json(data)}
+def handle_put(data):
+    from_json(request.get_json(), created=True)
+    data.save()
+    return {"message": f"data successfully updated", "result": pretty_json(data)}
 
-# def handle_delete(data):
-#     data.delete()
-#     return {"message": f"Resource successfully deleted.", "result": "OK."}
+def handle_delete(data):
+    data.delete()
+    return {"message": f"Resource successfully deleted.", "result": "OK."}
