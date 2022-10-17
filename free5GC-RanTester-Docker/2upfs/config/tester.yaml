@@ -1,0 +1,31 @@
+gnodeb:
+  controlif:
+    ip: "tester.free5gc.org"
+    port: 9487
+  dataif:
+    ip: "tester.free5gc.org"
+    port: 2152
+  plmnlist:
+    mcc: "208"
+    mnc: "93"
+    tac: "000001"
+    gnbid: "000002"
+  slicesupportlist:
+    sst: "01"
+    sd: "112233"
+ue:
+  msin: "0000000003"
+  key: "8baf473f2f8fd09487cccbd7097c6862"
+  opc: "8e27b6af0e692e750f32667a3b14605d"
+  amf: "8000"
+  sqn: "0000000"
+  dnn: "mec"
+  hplmn:
+    mcc: "208"
+    mnc: "93"
+  snssai:
+    sst: 1
+    sd: "112233"
+amfif:
+  ip: "amf.free5gc.org"
+  port: 38412
