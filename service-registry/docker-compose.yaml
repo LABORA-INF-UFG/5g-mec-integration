@@ -1,0 +1,45 @@
+version: '3.3'
+
+services:
+  service-registry:
+    image: service-registry:1.0
+    container_name: service-registry
+    build: .
+    env_file:
+      - .env
+    entrypoint: python3 app.py
+    ports:
+      - 8000:8000
+    restart: on-failure
+    networks:
+      privnet:
+        aliases:
+          - mts-api
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.0.4
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - dbdata:/data/db
+    networks:
+      privnet:
+        aliases:
+          - db
+
+volumes:
+  dbdata:
+
+networks:
+  privnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.200.0/24
+  

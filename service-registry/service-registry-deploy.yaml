@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-registry
+  namespace: default
+  labels:
+    app: service-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-registry
+  template:
+    metadata:
+      labels:
+        app: service-registry
+    spec:
+      containers:
+        - name: service-registry
+          imagePullPolicy: Never
+          image: service-registry:1.0
+          ports:
+          - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-registry-svc
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31005
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: service-registry  
+  type: NodePort
+  

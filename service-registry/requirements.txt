@@ -1,0 +1,17 @@
+dnspython==2.2.1
+email-validator==1.2.1
+Flask
+Flask-JWT-Extended
+flask-mongoengine==1.0.0
+Flask-WTF==1.0.1
+Jinja2
+mongoengine==0.24.2
+mongoengine-goodjson==1.1.8
+PyJWT
+pymongo
+python-dateutil==2.8.2
+pytz==2022.1
+six==1.16.0
+Werkzeug
+python-dotenv
+waitress
