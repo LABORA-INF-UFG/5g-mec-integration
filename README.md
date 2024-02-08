@@ -6,9 +6,18 @@ Multi-access Edge Computing (MEC) represents the central concept that enables th
 
 ## Authors 
 
-* [Rúben França Xavier](https://orcid.org/0000-0003-4932-3700)
-* [Rogério S. Silva](https://orcid.org/0000-0002-5189-1179)
-* [Maria Ribeiro](https://orcid.org/0000-0003-4337-1920)
-* [Waldir Moreira](https://orcid.org/0000-0002-4310-2379)
-* [Antonio Carlos de Oliveira Junior](https://orcid.org/0000-0003-3595-3525)
-* [Prof. Leandro Alexandre Freitas](https://orcid.org/0000-0001-9801-2867)
+* [Rúben França Xavier](https://orcid.org/0000-0003-4932-3700) <sup>1</sup>
+* [Rogério S. Silva](https://orcid.org/0000-0002-5189-1179) <sup>2</sup>
+* [Maria Ribeiro](https://orcid.org/0000-0003-4337-1920) <sup>3, 4, 6</sup>
+* [Waldir Moreira](https://orcid.org/0000-0002-4310-2379) <sup>7</sup>
+* [Antonio Carlos de Oliveira Junior](https://orcid.org/0000-0003-3595-3525) <sup>5, 6, 7</sup>
+* [Leandro Alexandre Freitas](https://orcid.org/0000-0001-9801-2867) <sup>2</sup>
+
+## Affiliation
+1. Centro de Pesquisa e Desenvolvimento em Telecomunicações (CPQD)
+2. Numbers Lab., Federal Institute of Goiás (IFG)
+3. Institute for Systems and Computer Engineering, Technology and Science (INESC-TEC)
+4. Faculdade de Informação e Comunicação (FIC)
+5. Institute of Informatics (INF)
+6. Federal University of Goiás (UFG)
+7. Fraunhofer Portugal AICOS
