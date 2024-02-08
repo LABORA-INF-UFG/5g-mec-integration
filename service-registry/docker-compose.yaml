@@ -2,9 +2,8 @@ version: '3.3'
 
 services:
   service-registry:
-    image: service-registry:1.0
-    container_name: service-registry
     build: .
+    container_name: service-registry
     env_file:
       - .env
     entrypoint: python3 app.py
@@ -14,7 +13,7 @@ services:
     networks:
       privnet:
         aliases:
-          - mts-api
+          - service-registry
     depends_on:
       - mongodb
 
