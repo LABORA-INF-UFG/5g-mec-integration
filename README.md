@@ -1,15 +1,14 @@
-# 5G-MEC-Integration
+# A New Service Integrating MEC Into Open 5G Core
 
----
-Repositório que contém todo o desenvolvimento relacionado à dissertação de mestrado "Integração do modelo de referência Multi-Access Edge Computing (MEC) com o Núcleo 5G".
+## Abstract
 
-## Resumo do Trabalho
+Multi-access Edge Computing (MEC) represents the central concept that enables the creation of new applications and services that bring the benefits of edge computing to networks and users. By implementing applications and services at the edge, close to users and their devices, it becomes possible to take advantage of extremely low latency, substantial bandwidth, and optimized resource usage. However, enabling this approach requires careful integration between the MEC framework and the open 5G core. This work is dedicated to designing a new service that extends the functionality of the Multi-Access Traffic Steering (MTS) API, acting as a strategic bridge between the realms of MEC and the 5G core. To achieve this purpose, the free5GC is deployed in the Kubernetes cluster. The proposed service is validated using this framework, involving scenarios of high user density. The validation results indicate that the service effectively addresses the outlined issues while demonstrating its feasibility in various use cases.
 
-Multi-access Edge Computing (MEC) é o conceito chave para que possam ser desenvolvidas novas aplicações e serviços que levam benefícios da computação de borda para as redes e usuários. Com as aplicações e serviços na borda, ou seja, mais próximo dos usuários e dispositivos, será possível utilizar de recursos como ultra baixa latência, alta largura de banda e consumo de recursos. Contudo, para que isso seja possível é necessário que seja feito integração entre framework MEC e core 5G. Para isto, este trabalho propõe a especificação de um serviço que estenderá a API Multi-Access Traffic Steering (MTS) como forma de ponte para ligação entre MEC e 5G Core. Foi usado o free5GC e um cluster Kubernetes para simular um ambiente fim a fim. O serviço proposto foi validado utilizando o ferramental supracitado, com cenários fim a fim e também em cenários com grande volume de usuários. A validação demonstrou que o serviço resolve o problema apresentado, além de demonstrar a sua viabilidade em casos de uso. 
+## Authors 
 
-Aluno responsável:
-* [Rúben França](http://lattes.cnpq.br/4347723663075319)
-
-Orientadores:
-* [Prof. Antonio Carlos de Oliveira Junior](http://lattes.cnpq.br/3148813459575445)
-* [Prof. Leandro Alexandre Freitas](http://lattes.cnpq.br/7450982711522425)
+* [Rúben França Xavier](https://orcid.org/0000-0003-4932-3700)
+* [Rogério S. Silva](https://orcid.org/0000-0002-5189-1179)
+* [Maria Ribeiro](https://orcid.org/0000-0003-4337-1920)
+* [Waldir Moreira](https://orcid.org/0000-0002-4310-2379)
+* [Antonio Carlos de Oliveira Junior](https://orcid.org/0000-0003-3595-3525)
+* [Prof. Leandro Alexandre Freitas](https://orcid.org/0000-0001-9801-2867)
