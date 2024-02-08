@@ -1,0 +1,65 @@
+version: '3.3'
+
+services:
+  imc_calc:
+    build: ./imc_app
+    container_name: imc_calc
+    entrypoint: python3 app.py
+    ports:
+      - 5000:5000
+    restart: on-failure
+    networks:
+      mec-apps:
+        aliases:
+          - imc_calc
+  mts_api:
+    build: ./mts_api
+    container_name: mts_api
+    entrypoint: python3 app.py
+    ports:
+      - 6000:6000
+    networks:
+      mec-apps:
+        aliases:
+          - mts_api
+
+ service-registry:
+    build: ./service-registry
+    container_name: service-registry
+    env_file:
+      - .env
+    entrypoint: python3 app.py
+    ports:
+      - 8000:8000
+    restart: on-failure
+    networks:
+      mec-apps:
+        aliases:
+          - service-registry
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.0.4
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+    ports:
+      - 27017:27017
+    volumes:
+      - dbdata:/data/db
+    networks:
+      mec-apps:
+        aliases:
+          - db
+
+volumes:
+  dbdata:
+
+networks:
+  mec-apps:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.100.100.0/24
