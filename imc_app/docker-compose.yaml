@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  imc-calc:
-    image: imc-calc
-    container_name: imc-calc
+  imc_calc:
+    image: imc_calc
+    container_name: imc_calc
     build: .
     entrypoint: python3 app.py
     ports:
@@ -12,18 +12,7 @@ services:
     networks:
       mec-apps:
         aliases:
-          - imc-calc
-  mts-api:
-    image: mts-api:1.0
-    container_name: MTS-Api
-    build: ../apiMestrado_Ruben/
-    entrypoint: python3 app.py
-    ports:
-      - 6000:6000
-    networks:
-      mec-apps:
-        aliases:
-          - mts-api
+          - imc_calc
 
 networks:
   mec-apps:

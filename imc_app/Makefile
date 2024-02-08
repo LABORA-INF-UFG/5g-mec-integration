@@ -1,4 +1,4 @@
-app_name = imc-app
+app_name = imc_app
 tag = 1.0
 build:
 	docker build -t $(app_name):$(tag) .
@@ -8,7 +8,7 @@ run:
 	docker run --name $(app_name):$(tag) -p 8000:8000 $(app_name)
 
 kill:
-	kubectl delete deployment imc-app --namespace=mec-apps
+	kubectl delete deployment imc_app --namespace=mec-apps
 	docker rmi $(app_name):$(tag)
 deploy:
 	kubectl apply -f IMCCalc_Deploy.yaml
