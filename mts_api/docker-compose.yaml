@@ -1,9 +1,8 @@
 version: '3.3'
 services:
   api:
-    image: mts-api:1.0
-    container_name: MTS-Api
     build: .
+    container_name: mts_api
     entrypoint: python3 app.py
     ports:
       - 6000:6000

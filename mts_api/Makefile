@@ -1,4 +1,4 @@
-app_name = mts-api
+app_name = mts_api
 tag = 1.0
 build:
 	docker build -t $(app_name):$(tag) .
